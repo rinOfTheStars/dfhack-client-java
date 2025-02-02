@@ -17,9 +17,9 @@ import org.springframework.cache.annotation.Cacheable;
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 
-import dfproto.CoreProtocol.CoreBindReply;
-import dfproto.CoreProtocol.CoreBindRequest;
-import dfproto.CoreProtocol.CoreBindRequest.Builder;
+import main.java.dfproto.CoreProtocol.CoreBindReply;
+import main.java.dfproto.CoreProtocol.CoreBindRequest;
+import main.java.dfproto.CoreProtocol.CoreBindRequest.Builder;
 
 /**
  * DFHack RPC client.
