@@ -1,4 +1,5 @@
-# DFHack RPC Client
+# Mechanical Dwarf: Java Command Relay Client
 
-Java client for the DFHack RPC service.  
-See test program in `test/main/java/dfhackclient/RemoteFortressReaderTest.java`  
+Better README file TODO
+
+The `dfhackclient` package is provided under the MIT license; the rest of the project is provided under the MPL 2.0 license. 

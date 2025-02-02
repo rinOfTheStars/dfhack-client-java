@@ -1,4 +1,4 @@
-package main.java.mechdwarf;
+package main.java.com.artificesoft.mechdwarf;
 
 import java.io.File;
 import java.io.FileNotFoundException;
