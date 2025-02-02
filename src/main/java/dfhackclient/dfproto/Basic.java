@@ -2,8 +2,9 @@
 // source: Basic.proto
 
 // Protobuf Java Version: 3.25.1
-package main.java.dfproto;
+package main.java.dfhackclient.dfproto;
 
+@SuppressWarnings({"deprecation", "unused"})
 public final class Basic {
   private Basic() {}
   public static void registerAllExtensions(

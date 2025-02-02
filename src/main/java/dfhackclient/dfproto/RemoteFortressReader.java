@@ -2,8 +2,9 @@
 // source: RemoteFortressReader.proto
 
 // Protobuf Java Version: 3.25.1
-package main.java.dfproto;
+package main.java.dfhackclient.dfproto;
 
+@SuppressWarnings({"deprecation", "unused"})
 public final class RemoteFortressReader {
   private RemoteFortressReader() {}
   public static void registerAllExtensions(
@@ -29692,19 +29693,19 @@ public final class RemoteFortressReader {
     RemoteFortressReader.ColorDefinitionOrBuilder getStateColorOrBuilder();
 
     /**
-     * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+     * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
      * @return Whether the instrument field is set.
      */
     boolean hasInstrument();
     /**
-     * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+     * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
      * @return The instrument.
      */
-    ItemdefInstrument.ItemdefInstrument.InstrumentDef getInstrument();
+    ItemDefInstrument.InstrumentDef getInstrument();
     /**
-     * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+     * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
      */
-    ItemdefInstrument.ItemdefInstrument.InstrumentDefOrBuilder getInstrumentOrBuilder();
+    ItemDefInstrument.InstrumentDefOrBuilder getInstrumentOrBuilder();
 
     /**
      * <code>optional int32 up_step = 6;</code>
@@ -29941,9 +29942,9 @@ public final class RemoteFortressReader {
     }
 
     public static final int INSTRUMENT_FIELD_NUMBER = 5;
-    private ItemdefInstrument.ItemdefInstrument.InstrumentDef instrument_;
+    private ItemDefInstrument.InstrumentDef instrument_;
     /**
-     * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+     * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
      * @return Whether the instrument field is set.
      */
     @java.lang.Override
@@ -29951,19 +29952,19 @@ public final class RemoteFortressReader {
       return ((bitField0_ & 0x00000010) != 0);
     }
     /**
-     * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+     * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
      * @return The instrument.
      */
     @java.lang.Override
-    public ItemdefInstrument.ItemdefInstrument.InstrumentDef getInstrument() {
-      return instrument_ == null ? ItemdefInstrument.ItemdefInstrument.InstrumentDef.getDefaultInstance() : instrument_;
+    public ItemDefInstrument.InstrumentDef getInstrument() {
+      return instrument_ == null ? ItemDefInstrument.InstrumentDef.getDefaultInstance() : instrument_;
     }
     /**
-     * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+     * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
      */
     @java.lang.Override
-    public ItemdefInstrument.ItemdefInstrument.InstrumentDefOrBuilder getInstrumentOrBuilder() {
-      return instrument_ == null ? ItemdefInstrument.ItemdefInstrument.InstrumentDef.getDefaultInstance() : instrument_;
+    public ItemDefInstrument.InstrumentDefOrBuilder getInstrumentOrBuilder() {
+      return instrument_ == null ? ItemDefInstrument.InstrumentDef.getDefaultInstance() : instrument_;
     }
 
     public static final int UP_STEP_FIELD_NUMBER = 6;
@@ -31061,31 +31062,31 @@ public final class RemoteFortressReader {
         return stateColorBuilder_;
       }
 
-      private ItemdefInstrument.ItemdefInstrument.InstrumentDef instrument_;
+      private ItemDefInstrument.InstrumentDef instrument_;
       private com.google.protobuf.SingleFieldBuilderV3<
-          ItemdefInstrument.ItemdefInstrument.InstrumentDef, ItemdefInstrument.ItemdefInstrument.InstrumentDef.Builder, ItemdefInstrument.ItemdefInstrument.InstrumentDefOrBuilder> instrumentBuilder_;
+          ItemDefInstrument.InstrumentDef, ItemDefInstrument.InstrumentDef.Builder, ItemDefInstrument.InstrumentDefOrBuilder> instrumentBuilder_;
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        * @return Whether the instrument field is set.
        */
       public boolean hasInstrument() {
         return ((bitField0_ & 0x00000010) != 0);
       }
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        * @return The instrument.
        */
-      public ItemdefInstrument.ItemdefInstrument.InstrumentDef getInstrument() {
+      public ItemDefInstrument.InstrumentDef getInstrument() {
         if (instrumentBuilder_ == null) {
-          return instrument_ == null ? ItemdefInstrument.ItemdefInstrument.InstrumentDef.getDefaultInstance() : instrument_;
+          return instrument_ == null ? ItemDefInstrument.InstrumentDef.getDefaultInstance() : instrument_;
         } else {
           return instrumentBuilder_.getMessage();
         }
       }
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        */
-      public Builder setInstrument(ItemdefInstrument.ItemdefInstrument.InstrumentDef value) {
+      public Builder setInstrument(ItemDefInstrument.InstrumentDef value) {
         if (instrumentBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -31099,10 +31100,10 @@ public final class RemoteFortressReader {
         return this;
       }
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        */
       public Builder setInstrument(
-          ItemdefInstrument.ItemdefInstrument.InstrumentDef.Builder builderForValue) {
+          ItemDefInstrument.InstrumentDef.Builder builderForValue) {
         if (instrumentBuilder_ == null) {
           instrument_ = builderForValue.build();
         } else {
@@ -31113,13 +31114,13 @@ public final class RemoteFortressReader {
         return this;
       }
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        */
-      public Builder mergeInstrument(ItemdefInstrument.ItemdefInstrument.InstrumentDef value) {
+      public Builder mergeInstrument(ItemDefInstrument.InstrumentDef value) {
         if (instrumentBuilder_ == null) {
           if (((bitField0_ & 0x00000010) != 0) &&
             instrument_ != null &&
-            instrument_ != ItemdefInstrument.ItemdefInstrument.InstrumentDef.getDefaultInstance()) {
+            instrument_ != ItemDefInstrument.InstrumentDef.getDefaultInstance()) {
             getInstrumentBuilder().mergeFrom(value);
           } else {
             instrument_ = value;
@@ -31134,7 +31135,7 @@ public final class RemoteFortressReader {
         return this;
       }
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        */
       public Builder clearInstrument() {
         bitField0_ = (bitField0_ & ~0x00000010);
@@ -31147,33 +31148,33 @@ public final class RemoteFortressReader {
         return this;
       }
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        */
-      public ItemdefInstrument.ItemdefInstrument.InstrumentDef.Builder getInstrumentBuilder() {
+      public ItemDefInstrument.InstrumentDef.Builder getInstrumentBuilder() {
         bitField0_ |= 0x00000010;
         onChanged();
         return getInstrumentFieldBuilder().getBuilder();
       }
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        */
-      public ItemdefInstrument.ItemdefInstrument.InstrumentDefOrBuilder getInstrumentOrBuilder() {
+      public ItemDefInstrument.InstrumentDefOrBuilder getInstrumentOrBuilder() {
         if (instrumentBuilder_ != null) {
           return instrumentBuilder_.getMessageOrBuilder();
         } else {
           return instrument_ == null ?
-              ItemdefInstrument.ItemdefInstrument.InstrumentDef.getDefaultInstance() : instrument_;
+              ItemDefInstrument.InstrumentDef.getDefaultInstance() : instrument_;
         }
       }
       /**
-       * <code>optional .ItemdefInstrument.InstrumentDef instrument = 5;</code>
+       * <code>optional .ItemDefInstrument.InstrumentDef instrument = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          ItemdefInstrument.ItemdefInstrument.InstrumentDef, ItemdefInstrument.ItemdefInstrument.InstrumentDef.Builder, ItemdefInstrument.ItemdefInstrument.InstrumentDefOrBuilder> 
+          ItemDefInstrument.InstrumentDef, ItemDefInstrument.InstrumentDef.Builder, ItemDefInstrument.InstrumentDefOrBuilder>
           getInstrumentFieldBuilder() {
         if (instrumentBuilder_ == null) {
           instrumentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              ItemdefInstrument.ItemdefInstrument.InstrumentDef, ItemdefInstrument.ItemdefInstrument.InstrumentDef.Builder, ItemdefInstrument.ItemdefInstrument.InstrumentDefOrBuilder>(
+              ItemDefInstrument.InstrumentDef, ItemDefInstrument.InstrumentDef.Builder, ItemDefInstrument.InstrumentDefOrBuilder>(
                   getInstrument(),
                   getParentForChildren(),
                   isClean());
@@ -112757,7 +112758,7 @@ public final class RemoteFortressReader {
     descriptor = com.google.protobuf.Descriptors.FileDescriptor
       .internalBuildGeneratedFileFrom(descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          ItemdefInstrument.ItemdefInstrument.getDescriptor(),
+          ItemDefInstrument.getDescriptor(),
         });
     internal_static_RemoteFortressReader_Coord_descriptor =
       getDescriptor().getMessageTypes().get(0);
@@ -113233,7 +113234,7 @@ public final class RemoteFortressReader {
       com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
         internal_static_RemoteFortressReader_Wave_descriptor,
         new java.lang.String[] { "Dest", "Pos", });
-    ItemdefInstrument.ItemdefInstrument.getDescriptor();
+    ItemDefInstrument.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)

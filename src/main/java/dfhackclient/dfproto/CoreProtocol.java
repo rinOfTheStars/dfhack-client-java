@@ -2,8 +2,9 @@
 // source: CoreProtocol.proto
 
 // Protobuf Java Version: 3.25.1
-package main.java.dfproto;
+package main.java.dfhackclient.dfproto;
 
+@SuppressWarnings({"deprecation", "unused"})
 public final class CoreProtocol {
   private CoreProtocol() {}
   public static void registerAllExtensions(
