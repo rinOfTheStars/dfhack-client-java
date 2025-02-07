@@ -1,7 +1,7 @@
 // (c) 2021- McArcady@gmail.com
 // This code is licensed under MIT license (see RPC_CLIENT_LICENSE.txt for details)
 
-package main.java.dfhackclient;
+package dfhackclient;
 
 import java.io.IOException;
 

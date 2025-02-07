@@ -1,0 +1,19 @@
+Configuration:
+  Appenders:
+    Console:
+      name: "CONSOLE"
+      PatternLayout:
+        pattern: "[%d{HH:mm:ss}] [%t/%level]: %msg{nolookups}%n"
+    File:
+      - name: "MAIN"
+        fileName: "logs/latest.log"
+        PatternLayout:
+          pattern: "[%d{HH:mm:ss}] [%t/%level]: %msg{nolookups}%n"
+  Loggers:
+    Root:
+      level: "INFO"
+      AppenderRef:
+        - ref: "CONSOLE"
+        - ref: "MAIN"
+      
+        

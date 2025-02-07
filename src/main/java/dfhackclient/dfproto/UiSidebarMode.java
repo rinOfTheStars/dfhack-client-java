@@ -2,7 +2,7 @@
 // source: ui_sidebar_mode.proto
 
 // Protobuf Java Version: 3.25.1
-package main.java.dfhackclient.dfproto;
+package dfhackclient.dfproto;
 
 @SuppressWarnings({"deprecation", "unused"})
 public final class UiSidebarMode {

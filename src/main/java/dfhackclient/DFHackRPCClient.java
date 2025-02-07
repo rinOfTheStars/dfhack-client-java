@@ -1,7 +1,7 @@
 // (c) 2021- McArcady@gmail.com
 // This code is licensed under MIT license (see RPC_CLIENT_LICENSE.txt for details)
 
-package main.java.dfhackclient;
+package dfhackclient;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -11,15 +11,17 @@ import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.charset.StandardCharsets;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 import org.springframework.cache.annotation.Cacheable;
 
 import com.google.protobuf.InvalidProtocolBufferException;
 import com.google.protobuf.Message;
 
-import main.java.dfhackclient.dfproto.CoreProtocol.CoreBindReply;
-import main.java.dfhackclient.dfproto.CoreProtocol.CoreBindRequest;
-import main.java.dfhackclient.dfproto.CoreProtocol.CoreBindRequest.Builder;
+import dfhackclient.dfproto.CoreProtocol.CoreBindReply;
+import dfhackclient.dfproto.CoreProtocol.CoreBindRequest;
+import dfhackclient.dfproto.CoreProtocol.CoreBindRequest.Builder;
 
 /**
  * DFHack RPC client.
@@ -44,20 +46,28 @@ public class DFHackRPCClient {
 		socket = AsynchronousSocketChannel.open();
 	}
 	
-	private ByteBuffer writeAndRead(ByteBuffer request, int exp_sz) throws DFHackRPCException {
+	private ByteBuffer writeAndRead(ByteBuffer request, int exp_sz, boolean useTimeout) throws DFHackRPCException {
 		assert socket != null;
 		try {
 			Future<Integer> wres = socket.write(request);
 			wres.get();
 			var result = ByteBuffer.allocate(exp_sz).order(ByteOrder.LITTLE_ENDIAN);
 			Future<Integer> rres = socket.read(result);
-			if (rres.get() == -1) {
-				throw new DFHackRPCException("end-of-stream error while reading result from RPC server");
+			if (useTimeout) {
+				if (rres.get(1L, TimeUnit.SECONDS) == -1) {
+					throw new DFHackRPCException("End-of-stream error while reading result from RPC server");
+				}
+			} else {
+				if (rres.get() == -1) {
+					throw new DFHackRPCException("End-of-stream error while reading result from RPC server");
+				}
 			}
 			return result.rewind();
 		} catch (InterruptedException | ExecutionException e) {
-			throw new DFHackRPCException("failed to exchange with RPC server", e);
-		}		
+			throw new DFHackRPCException("Failed to exchange with RPC server", e);	
+		} catch (TimeoutException te) {
+			throw new DFHackRPCException("Timeout on RPC server response occured", te);
+		}	
 	}	
 	
 	private ByteBuffer createHandshake() {
@@ -78,7 +88,7 @@ public class DFHackRPCClient {
 		try {
 			Future<Void> cres = socket.connect(new InetSocketAddress("127.0.0.1", tcpPort));
 			cres.get();
-			ByteBuffer response = writeAndRead(createHandshake(), 12);
+			ByteBuffer response = writeAndRead(createHandshake(), 12, true);
 			byte[] magic = new byte[8];
 			response.rewind().get(magic);
 			if (! new String(magic).contentEquals("DFHack!\n")) {
@@ -124,7 +134,7 @@ public class DFHackRPCClient {
 	}
 	
 	private ByteBuffer sendRequest(ByteBuffer request) throws DFHackRPCException {
-		ByteBuffer result = writeAndRead(request, 8);
+		ByteBuffer result = writeAndRead(request, 8, false);
 		short id = result.getShort();
 		if (id != ReplyCode.RPC_REPLY_RESULT.id && id != ReplyCode.RPC_REPLY_TEXT.id) {
 			throw new DFHackRPCException("unexpected result for bind request: id="+id);
